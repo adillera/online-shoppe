@@ -50,6 +50,6 @@ group :development, :test do
 
   gem 'factory_girl'
 
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.0'
 end
 
