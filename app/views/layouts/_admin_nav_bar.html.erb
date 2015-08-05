@@ -1,0 +1,8 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-right col-md-4">
+      <p class="navbar-text"><%= t('admin.signed_in_as') %> <%= current_admin.email %></p>
+      <%= link_to t('common.logout'), destroy_admin_session_path, class: "btn btn-default navbar-btn", method: :delete %>
+    </div>
+  </div>
+</nav>
