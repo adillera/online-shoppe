@@ -24,3 +24,6 @@ en:
     logout: Logout
   admin:
     signed_in_as: Signed in as
+    navbar:
+      home: Home
+      products: Products

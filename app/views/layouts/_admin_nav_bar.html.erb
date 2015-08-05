@@ -1,4 +1,20 @@
 <nav class="navbar navbar-default">
+  <ul class="nav navbar-nav navbar-left">
+    <li class=<%= active == 'home' ? "active" : "" %>>
+      <%= link_to admin_root_path, class: "navbar-link" do %>
+        <i class="fa fa-home"></i>
+        <%= t('admin.navbar.home') %>
+      <% end %>
+    </li>
+
+    <li class=<%= active == 'products' ? "active" : "" %>>
+      <%= link_to admin_root_path, class: "navbar-link" do %>
+        <i class="fa fa-shopping-cart"></i>
+        <%= t('admin.navbar.products') %>
+      <% end %>
+    </li>
+  </ul>
+
   <div class="container-fluid">
     <div class="navbar-right col-md-4">
       <p class="navbar-text"><%= t('admin.signed_in_as') %> <%= current_admin.email %></p>
