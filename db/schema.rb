@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(version: 20150805092141) do
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.decimal  "price"
+    t.decimal  "price",        default: 0.0
     t.integer  "thumbnail_id"
-    t.boolean  "is_active"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.boolean  "is_active",    default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end
