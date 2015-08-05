@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= link_to admin_product_path(product.id), method: :delete, class: "btn btn-default" do %>
+      <i class="fa fa-trash-o"></i>
+    <% end %>
+  </td>
+  <td><%= product.name %></td>
+  <td><%= product.description %></td>
+  <td><%= product.price %></td>
+  <td><%= product.is_active %></td>
+  <td><%= product.images.last.photo.url %></td>
+</tr>

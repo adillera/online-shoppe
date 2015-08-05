@@ -1,3 +1,33 @@
 <%= render partial: 'layouts/admin_nav_bar', locals: { active: 'products' } %>
-
+<div><%= flash[:success] %></div>
+<div><%= flash[:error] %></div>
 <h1><%= t('admin.navbar.products') %></h1>
+
+<div class="fluid-container">
+  <div class="col-md-12">
+    <%= link_to new_admin_product_path, class: "btn btn-primary pull-right" do %>
+      <i class="fa fa-plus-circle" ></i>
+      <%= t('admin.products.add_new_product') %>
+    <% end %>
+  </div>
+
+  <div class="col-md-12">
+    <table class="table table-stripped table-hover">
+      <thead>
+        <tr>
+          <th><%= t('admin.common.actions') %></th>
+          <th><%= t('admin.products.form.name') %></th>
+          <th><%= t('admin.products.form.description') %></th>
+          <th><%= t('admin.products.form.price') %></th>
+          <th><%= t('admin.products.form.is_active') %></th>
+          <th><%= t('admin.products.form.image') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @products %>
+      </tbody>
+    </table>
+
+    <%= will_paginate @products %>
+  </div>
+</div>

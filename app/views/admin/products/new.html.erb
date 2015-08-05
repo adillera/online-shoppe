@@ -1,2 +1,7 @@
-<h1>Admin::Products#new</h1>
-<p>Find me in app/views/admin/products/new.html.erb</p>
+<%= render partial: 'layouts/admin_nav_bar', locals: { active: 'products' } %>
+
+<h1><%= t('admin.products.add_new_product') %></h1>
+
+<div class="fluid-container">
+  <%= render partial: 'form' %>
+</div>

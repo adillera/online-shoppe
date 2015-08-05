@@ -22,8 +22,20 @@
 en:
   common:
     logout: Logout
+    actions: Actions
   admin:
     signed_in_as: Signed in as
     navbar:
       home: Home
       products: Products
+    products:
+      add_new_product: Add new product
+      form:
+        name: Name
+        description: Description
+        price: Price
+        is_active: Is active?
+        image: Image
+      actions:
+        successfully_deleted_product: Successfully deleted product
+        failed_to_delete_product: Failed to delete product
