@@ -4,6 +4,8 @@ class Admin::ProductsController < AdminController
   end
 
   def show
+    @product = Product.find(params[:id])
+    @image = Image.find(@product.thumbnail_id)
   end
 
   def new
@@ -13,7 +15,12 @@ class Admin::ProductsController < AdminController
   def create
     begin
       product = Product.create(permitted_product_data)
-      product.images.create(permitted_image_data)
+
+      if params.has_key?(:image)
+        image = product.images.create(permitted_image_data)
+
+        product.update_attribute(:thumbnail_id, image.id)
+      end
 
       redirect_to action: :index
     rescue => e
@@ -21,9 +28,20 @@ class Admin::ProductsController < AdminController
   end
 
   def edit
+    @product = Product.find(params[:id])
   end
 
   def update
+    begin
+      product = Product.find(params[:id])
+      product.update_attributes(permitted_product_data)
+
+      flash[:success] = t('admin.products.actions.sucessfully_updated_the_product')
+    rescue => e
+      flash[:error] = t('admin.products.actions.failed_to_delete_product')
+    end
+
+    redirect_to action: :index
   end
 
   def destroy
@@ -44,7 +62,8 @@ class Admin::ProductsController < AdminController
       :name,
       :description,
       :price,
-      :is_active
+      :is_active,
+      :thumbnail_id
     )
   end
 

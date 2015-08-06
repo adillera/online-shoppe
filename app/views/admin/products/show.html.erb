@@ -1,2 +1,31 @@
-<h1>Admin::Products#show</h1>
-<p>Find me in app/views/admin/products/show.html.erb</p>
+<%= render partial: 'layouts/admin_nav_bar', locals: { active: 'products' } %>
+
+<h1><%= @product.name %></h1>
+
+<div class="fluid-container">
+  <div class="col-md-4">
+    <%= image_tag image_url(@image.photo.url(:medium)) %>
+  </div>
+  <div class="col-md-8">
+    <table class="table table-stripped">
+      <tbody>
+        <tr>
+          <td class="col-md-2"><%= t('admin.products.form.is_active') %></td>
+          <td><%= @product.is_active %></td>
+        </tr>
+        <tr>
+          <td class="col-md-2"><%= t('admin.products.form.price') %></td>
+          <td><%= @product.price %></td>
+        </tr>
+        <tr>
+          <td class="col-md-2"><%= t('admin.products.form.name') %></td>
+          <td><%= @product.name %></td>
+        </tr>
+        <tr>
+          <td class="col-md-2"><%= t('admin.products.form.description') %></td>
+          <td><%= @product.description %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

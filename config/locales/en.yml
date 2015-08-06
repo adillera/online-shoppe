@@ -30,6 +30,7 @@ en:
       products: Products
     products:
       add_new_product: Add new product
+      edit_product: Edit product
       form:
         name: Name
         description: Description
@@ -39,3 +40,5 @@ en:
       actions:
         successfully_deleted_product: Successfully deleted product
         failed_to_delete_product: Failed to delete product
+        sucessfully_updated_the_product: Successfully updated the product
+        failed_to_delete_the_product: Failed to delete the product

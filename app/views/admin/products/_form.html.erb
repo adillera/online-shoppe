@@ -1,4 +1,4 @@
-<%= form_for @product, url: admin_products_path, html:{ multipart: true } do |f| %>
+<%= form_for [:admin, @product], html:{ multipart: true } do |f| %>
   <div class="form-group">
     <%= f.label :name, t('admin.products.form.name') %>
     <%= f.text_field :name, class: "form-control", placeholder: t('admin.products.form.name'), alt: t('admin.products.form.name') %>
@@ -21,11 +21,13 @@
     <% end %>
   </div>
 
-  <%= fields_for :image, @product.images do |i| %>
-    <div class="form-group">
-      <%= i.label :image, t('admin.products.form.image') %>
-      <%= i.file_field :photo, class: "form-control", placeholder: t('admin.products.form.image'), alt: t('admin.products.form.image') %>
-    </div>
+  <% unless @product.id %>
+    <%= fields_for :image, @product.images do |i| %>
+      <div class="form-group">
+        <%= i.label :image, t('admin.products.form.image') %>
+        <%= i.file_field :photo, class: "form-control", placeholder: t('admin.products.form.image'), alt: t('admin.products.form.image') %>
+      </div>
+    <% end %>
   <% end %>
 
   <%= f.submit class: "btn btn-primary" %>
