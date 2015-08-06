@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     root to: 'dashboard#index'
 
     resources :products
+    resources :categories
   end
 end

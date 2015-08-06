@@ -1,0 +1,30 @@
+<%= render partial: 'layouts/admin_nav_bar', locals: { active: 'categories' } %>
+
+<div><%= flash[:success] %></div>
+<div><%= flash[:error] %></div>
+<h1><%= t('admin.navbar.categories') %></h1>
+
+<div class="fluid-container">
+  <div class="col-md-12">
+    <%= link_to new_admin_category_path, class: "btn btn-primary pull-right" do %>
+      <i class="fa fa-plus-circle" ></i>
+      <%= t('admin.products.add_new_category') %>
+    <% end %>
+  </div>
+
+  <div class="col-md-12">
+    <table class="table table-stripped table-hover">
+      <thead>
+        <tr>
+          <th class="col-md-2"><%= t('admin.common.actions') %></th>
+          <th><%= t('admin.categories.form.name') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @categories %>
+      </tbody>
+    </table>
+
+    <%= will_paginate @categories %>
+  </div>
+</div>

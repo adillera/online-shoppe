@@ -7,6 +7,13 @@
       <% end %>
     </li>
 
+    <li class=<%= active == 'categories' ? "active" : "" %>>
+      <%= link_to admin_categories_path, class: "navbar-link" do %>
+        <i class="fa fa-shopping-cart"></i>
+        <%= t('admin.navbar.categories') %>
+      <% end %>
+    </li>
+
     <li class=<%= active == 'products' ? "active" : "" %>>
       <%= link_to admin_products_path, class: "navbar-link" do %>
         <i class="fa fa-shopping-cart"></i>

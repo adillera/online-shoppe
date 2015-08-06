@@ -28,7 +28,15 @@ en:
     navbar:
       home: Home
       products: Products
+      categories: Categories
+    categories:
+      form:
+        name: Name
+      actions:
+        successfully_created_category: Successfully created category.
+        failed_to_create_category: Failed to create category.
     products:
+      add_new_category: Add new category
       add_new_product: Add new product
       edit_product: Edit product
       form:
