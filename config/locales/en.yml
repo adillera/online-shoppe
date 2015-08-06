@@ -45,6 +45,7 @@ en:
         price: Price
         is_active: Is active?
         image: Image
+        category: Category
       actions:
         successfully_deleted_product: Successfully deleted product
         failed_to_delete_product: Failed to delete product

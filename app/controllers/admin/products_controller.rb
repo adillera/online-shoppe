@@ -63,7 +63,8 @@ class Admin::ProductsController < AdminController
       :description,
       :price,
       :is_active,
-      :thumbnail_id
+      :thumbnail_id,
+      :category_id
     )
   end
 

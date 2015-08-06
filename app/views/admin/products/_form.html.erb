@@ -14,6 +14,11 @@
     <%= f.text_field :price, class: "form-control", placeholder: t('admin.products.form.price'), alt: t('admin.products.form.price') %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :category, t('admin.products.form.category') %>
+    <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name, selected: f.object.category_id), {}, { class: "form-control" } %>
+  </div>
+
   <div class="checkbox">
     <%= f.label :is_active do %>
       <%= f.check_box :is_active, alt: t('admin.products.form.is_active') %>
